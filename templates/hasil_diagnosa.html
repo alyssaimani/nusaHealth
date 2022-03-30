@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>NusaHealth</title>
+{% endblock %}
+
+{% block body %}
+<div class="result">
+    <h1>Diagnostic Result</h1>
+
+    <div class="profile">
+        <p>Name: {{ user_name }}</p>
+        <p>Date of Birth: {{ user_bdate }}</p>
+    </div>
+    <br>
+   <table>
+        <tr>
+            <th><p>Symptomps</p></th>
+            <td>
+                {% for key, val in user_symptoms.items() %}
+                <li>{{key}}</li>
+                {% endfor%}
+            </td>
+        </tr>
+        <tr>
+            <th><p>Prognosis</p></th>
+            <td>{{ result[0] }}</td>
+        </tr>
+        <tr>
+            <th><p>Medicine</p></th>
+            <td>{{ medicine }}</td>
+        </tr>
+        <tr>
+            <th>Medicine Composition</th>
+            <td>{{ med_comp }}</td>
+        </tr>
+        <tr>
+            <th>Medicine Description</th>
+            <td>{{ med_desc }}</td>
+        </tr>
+        <tr> 
+            <th>How to Use the Medicine</th>
+        </tr>
+        <tr>
+            <th><p>Diagnostic Accuracy</p></th>
+            <td>{{ accuracy }}</td>
+        </tr>
+   </table>
+   <br>
+   <br>
+   <br>
+
+   <a class="button" href="/">Back to Menu</a>
+    
+    
+</div>
+{% endblock %}

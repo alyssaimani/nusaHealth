@@ -1,0 +1,568 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>NusaHealth</title>
+{% endblock %}
+
+{% block body %}
+<div class="diagnosa">
+    <h1>Disease Diagnosis</h1>
+    <br>
+    <div class="form">
+        <form action="" method="POST">
+            <p>Insert Your Name :</p> 
+            <input class="input-box" type="text" name="nm">
+            <p>Insert Your Date of Birth :</p>
+            <input class="input-box" type="date" name="tgl">
+            <p>Tick Your Symptomps :</p>
+            <div class="selected"></div>
+            <div class="dropdown">
+                <div class="search-box" onclick="Dropdown()">
+                    <input type="text" id="search" placeholder="Search Symptomps ...">
+                </div>
+                <div id="dropdown-content">
+                   <div class="option">
+                        <input type="checkbox" name="Itching" id="gejala-1" value="Itching">
+                        <label for="gejala-1">Itching</label> 
+                   </div> 
+                   <div class="option">
+                        <input type="checkbox" name="Skin rash" id="gejala-2" value="Skin rash">
+                        <label for="gejala-2">Skin rash</label> 
+                    </div> 
+                    <div class="option">
+                        <input type="checkbox" name="Nodal skin eruptions" id="gejala-3" value="Nodal skin eruptions">
+                        <label for="gejala-3">Nodal skin eruptions
+                        </label> 
+                    </div> 
+                    <div class="option">
+                        <input type="checkbox" name="Continuous sneezing" id="gejala-4" value="Continuous sneezing">
+                        <label for="gejala-4">Continuous sneezing
+                        </label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Shivering" id="gejala-5" value="Shivering">
+                        <label for="gejala-5">Shivering</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Chills" id="gejala-6" value="Chills">
+                        <label for="gejala-6">Chills</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Joint pain" id="gejala-7" value="Joint pain">
+                        <label for="gejala-7">Joint pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Stomach pain" id="gejala-8" value="Stomach pain">
+                        <label for="gejala-8">Stomach pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Acidity" id="gejala-9" value="Acidity">
+                        <label for="gejala-9">Acidity</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Ulcers on tongue" id="gejala-10" value="Ulcers on tongue">
+                        <label for="gejala-10">Ulcers on tongue</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Muscle wasting" id="gejala-11" value="Muscle wasting">
+                        <label for="gejala-11">Muscle wasting</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Vomiting" id="gejala-12" value="Vomiting">
+                        <label for="gejala-12">Vomiting</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Burning micturition" id="gejala-13" value="Burning micturition">
+                        <label for="gejala-13">Burning micturition</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Spotting urination" id="gejala-14" value="Spotting urination">
+                        <label for="gejala-14">Spotting urination</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Fatigue" id="gejala-15" value="Fatigue">
+                        <label for="gejala-15">Fatigue</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Weight gain" id="gejala-16" value="Weight gain">
+                        <label for="gejala-16">Weight gain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Anxiety" id="gejala-17" value="Anxiety">
+                        <label for="gejala-17">Anxiety</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Cold hands and feets" id="gejala-18" value="Cold hands and feets">
+                        <label for="gejala-18">Cold hands and feets</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Mood swings" id="gejala-19" value="Mood swings">
+                        <label for="gejala-19">Mood swings</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Weight loss" id="gejala-20" value="Weight loss">
+                        <label for="gejala-20">Weight loss</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Restlessness" id="gejala-21" value="Restlessness">
+                        <label for="gejala-21">Restlessness</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Lethargy" id="gejala-22" value="Lethargy">
+                        <label for="gejala-22">Lethargy</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Patches in throat" id="gejala-23" value="Patches in throat">
+                        <label for="gejala-23">Patches in throat</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Irregular sugar level" id="gejala-24" value="Irregular sugar level">
+                        <label for="gejala-24">Irregular sugar level</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Cough" id="gejala-25" value="Cough">
+                        <label for="gejala-25">Cough</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="High fever" id="gejala-26" value="High fever">
+                        <label for="gejala-26">High fever</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Sunken eyes" id="gejala-27" value="Sunken eyes">
+                        <label for="gejala-27">Sunken eyes</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Breathlessness" id="gejala-28" value="Breathlessness">
+                        <label for="gejala-28">Breathlessness</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Sweating" id="gejala-29" value="Sweating">
+                        <label for="gejala-29">Sweating</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Dehydration" id="gejala-30" value="Dehydration">
+                        <label for="gejala-30">Dehydration</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Indigestion" id="gejala-31" value="Indigestion">
+                        <label for="gejala-31">Indigestion</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Headache" id="gejala-32" value="Headache">
+                        <label for="gejala-32">Headache</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Yellowish skin" id="gejala-33" value="Yellowish skin">
+                        <label for="gejala-33">Yellowish skin</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Dark urine" id="gejala-34" value="Dark urine">
+                        <label for="gejala-34">Dark urine</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Nausea" id="gejala-35" value="Nausea">
+                        <label for="gejala-35">Nausea</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Loss of appetite" id="gejala-36" value="Loss of appetite">
+                        <label for="gejala-36">Loss of appetite</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Pain behind the eyes" id="gejala-37" value="Pain behind the eyes">
+                        <label for="gejala-37">Pain behind the eyes</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Back pain" id="gejala-38" value="Back pain">
+                        <label for="gejala-38">Back pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Constipation" id="gejala-39" value="Constipation">
+                        <label for="gejala-39">Constipation</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Abdominal pain" id="gejala-40" value="Abdominal pain">
+                        <label for="gejala-40">Abdominal pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Diarrhoea" id="gejala-41" value="Diarrhoea">
+                        <label for="gejala-41">Diarrhoea</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Mild fever" id="gejala-42" value="Mild fever">
+                        <label for="gejala-42">Mild fever</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Yellow urine" id="gejala-43" value="Yellow urine">
+                        <label for="gejala-43">Yellow urine</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Yellowing of eyes" id="gejala-44" value="Yellowing of eyes">
+                        <label for="gejala-44">Yellowing of eyes</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Acute liver failure" id="gejala-45" value="Acute liver failure">
+                        <label for="gejala-45">Acute liver failure</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Fluid overload" id="gejala-46" value="Fluid overload">
+                        <label for="gejala-46">Fluid overload</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Swelling of stomach" id="gejala-47" value="Swelling of stomach">
+                        <label for="gejala-47">Swelling of stomach</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Swelled lymph nodes" id="gejala-48" value="Swelled lymph nodes">
+                        <label for="gejala-48">Swelled lymph nodes</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Malaise" id="gejala-49" value="Malaise">
+                        <label for="gejala-49">Malaise</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Blurred and distorted vision" id="gejala-50" value="Blurred and distorted vision">
+                        <label for="gejala-50">Blurred and distorted vision</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Phlegm" id="gejala-51" value="Phlegm">
+                        <label for="gejala-51">Phlegm</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Throat irritation" id="gejala-52" value="Throat irritation">
+                        <label for="gejala-52">Throat irritation</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Redness of eyes" id="gejala-53" value="Redness of eyes">
+                        <label for="gejala-53">Redness of eyes</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Sinus pressure" id="gejala-54" value="Sinus pressure">
+                        <label for="gejala-54">Sinus pressure</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Runny nose" id="gejala-55" value="Runny nose">
+                        <label for="gejala-55">Runny nose</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Congestion" id="gejala-56" value="Congestion">
+                        <label for="gejala-56">Congestion</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Chest pain" id="gejala-57" value="Chest pain">
+                        <label for="gejala-57">Chest pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Weakness in limbs" id="gejala-58" value="Weakness in limbs">
+                        <label for="gejala-58">Weakness in limbs</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Fast heart rate" id="gejala-59" value="Fast heart rate">
+                        <label for="gejala-59">Fast heart rate</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Pain during bowel movements" id="gejala-60" value="Pain during bowel movements">
+                        <label for="gejala-60">Pain during bowel movements</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Pain in anal region" id="gejala-61" value="Pain in anal region">
+                        <label for="gejala-61">Pain in anal region</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Bloody stool" id="gejala-62" value="Bloody stool">
+                        <label for="gejala-62">Bloody stool</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Irritation in anus" id="gejala-63" value="Irritation in anus">
+                        <label for="gejala-63">Irritation in anus</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Neck_pain" id="gejala-64" value="Neck_pain">
+                        <label for="gejala-64">Neck_pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Dizziness" id="gejala-65" value="Dizziness">
+                        <label for="gejala-65">Dizziness</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Cramps" id="gejala-66" value="Cramps">
+                        <label for="gejala-66">Cramps</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Bruising" id="gejala-67" value="Bruising">
+                        <label for="gejala-67">Bruising</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Obesity" id="gejala-68" value="Obesity">
+                        <label for="gejala-68">Obesity</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Swollen legs" id="gejala-69" value="Swollen legs">
+                        <label for="gejala-69">Swollen legs</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Swollen blood vessels" id="gejala-70" value="Swollen blood vessels">
+                        <label for="gejala-70">Swollen blood vessels</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Puffy face and eyes" id="gejala-71" value="Puffy face and eyes">
+                        <label for="gejala-71">Puffy face and eyes</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Enlarged thyroid" id="gejala-72" value="Enlarged thyroid">
+                        <label for="gejala-72">Enlarged thyroid</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Brittle nails" id="gejala-73" value="Brittle nails">
+                        <label for="gejala-73">Brittle nails</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Swollen extremeties" id="gejala-74" value="Swollen extremeties">
+                        <label for="gejala-74">Swollen extremeties</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Excessive hunger" id="gejala-75" value="Excessive hunger">
+                        <label for="gejala-75">Excessive hunger</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Extra marital contacts" id="gejala-76" value="Extra marital contacts">
+                        <label for="gejala-76">Extra marital contacts</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Drying and tingling lips" id="gejala-77" value="Drying and tingling lips">
+                        <label for="gejala-77">Drying and tingling lips</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Slurred speech" id="gejala-78" value="Slurred speech">
+                        <label for="gejala-78">Slurred speech</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Knee pain" id="gejala-79" value="Knee pain">
+                        <label for="gejala-79">Knee pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Hip joint pain" id="gejala-80" value="Hip joint pain">
+                        <label for="gejala-80">Hip joint pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Muscle weakness" id="gejala-81" value="Muscle weakness">
+                        <label for="gejala-81">Muscle weakness</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Stiff neck" id="gejala-82" value="Stiff neck">
+                        <label for="gejala-82">Stiff neck</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Swelling joints" id="gejala-83" value="Swelling joints">
+                        <label for="gejala-83">Swelling joints</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Movement stiffness" id="gejala-84" value="Movement stiffness">
+                        <label for="gejala-84">Movement stiffness</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Spinning movements" id="gejala-85" value="Spinning movements">
+                        <label for="gejala-85">Spinning movements</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Loss of balance" id="gejala-86" value="Loss of balance">
+                        <label for="gejala-86">Loss of balance</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Unsteadiness" id="gejala-87" value="Unsteadiness">
+                        <label for="gejala-87">Unsteadiness</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Weakness of one body side" id="gejala-88" value="Weakness of one body side">
+                        <label for="gejala-88">Weakness of one body side</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Loss of smell" id="gejala-89" value="Loss of smell">
+                        <label for="gejala-89">Loss of smell</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Bladder discomfort" id="gejala-90" value="Bladder discomfort">
+                        <label for="gejala-90">Bladder discomfort</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Foul smell of urine" id="gejala-91" value="Foul smell of urine">
+                        <label for="gejala-91">Foul smell of urine</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Continuous feel of urine" id="gejala-92" value="Continuous feel of urine">
+                        <label for="gejala-92">Continuous feel of urine</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Passage of gases" id="gejala-93" value="Passage of gases">
+                        <label for="gejala-93">Passage of gases</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Internal itching" id="gejala-94" value="Internal itching">
+                        <label for="gejala-94">Internal itching</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Toxic look (typhos)" id="gejala-95" value="Toxic look (typhos)">
+                        <label for="gejala-95">Toxic look (typhos)</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Depression" id="gejala-96" value="Depression">
+                        <label for="gejala-96">Depression</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Irritability" id="gejala-97" value="Irritability">
+                        <label for="gejala-97">Irritability</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Muscle pain" id="gejala-98" value="Muscle pain">
+                        <label for="gejala-98">Muscle pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Altered sensorium" id="gejala-99" value="Altered sensorium">
+                        <label for="gejala-99">Altered sensorium</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Red spots over body" id="gejala-100" value="Red spots over body">
+                        <label for="gejala-100">Red spots over body</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Belly pain" id="gejala-101" value="Belly pain">
+                        <label for="gejala-101">Belly pain</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="abnormal menstruation" id="gejala-102" value="abnormal menstruation">
+                        <label for="gejala-102">abnormal menstruation</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Dischromic patches" id="gejala-103" value="Dischromic patches">
+                        <label for="gejala-103">Dischromic patches</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Watering from eyes" id="gejala-104" value="Watering from eyes">
+                        <label for="gejala-104">Watering from eyes</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Increased appetite" id="gejala-105" value="Increased appetite">
+                        <label for="gejala-105">Increased appetite</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Polyuria" id="gejala-106" value="Polyuria">
+                        <label for="gejala-106">Polyuria</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Family history" id="gejala-107" value="Family history">
+                        <label for="gejala-107">Family history</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Mucoid sputum" id="gejala-108" value="Mucoid sputum">
+                        <label for="gejala-108">Mucoid sputum</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Rusty sputum" id="gejala-109" value="Rusty sputum">
+                        <label for="gejala-109">Rusty sputum</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Lack of concentration" id="gejala-110" value="Lack of concentration">
+                        <label for="gejala-110">Lack of concentration</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Visual disturbances" id="gejala-111" value="Visual disturbances">
+                        <label for="gejala-111">Visual disturbances</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Receiving blood transfusion" id="gejala-112" value="Receiving blood transfusion">
+                        <label for="gejala-112">Receiving blood transfusion</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Receiving unsterile injections" id="gejala-113" value="Receiving unsterile injections">
+                        <label for="gejala-113">Receiving unsterile injections</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Coma" id="gejala-114" value="Coma">
+                        <label for="gejala-114">Coma</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Stomach bleeding" id="gejala-115" value="Stomach bleeding">
+                        <label for="gejala-115">Stomach bleeding</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Distention of abdomen" id="gejala-116" value="Distention of abdomen">
+                        <label for="gejala-116">Distention of abdomen</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="History of alcohol consumption" id="gejala-117" value="History of alcohol consumption">
+                        <label for="gejala-117">History of alcohol consumption</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Fluid overload" id="gejala-118" value="Fluid overload">
+                        <label for="gejala-118">Fluid overload</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Blood in sputum" id="gejala-119" value="Blood in sputum">
+                        <label for="gejala-119">Blood in sputum</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Prominent veins on calf" id="gejala-120" value="Prominent veins on calf">
+                        <label for="gejala-120">Prominent veins on calf</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Palpitations" id="gejala-121" value="Palpitations">
+                        <label for="gejala-121">Palpitations</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Painful walking" id="gejala-122" value="Painful walking">
+                        <label for="gejala-122">Painful walking</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Pus filled pimples" id="gejala-123" value="Pus filled pimples">
+                        <label for="gejala-123">Pus filled pimples</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Blackheads" id="gejala-124" value="Blackheads">
+                        <label for="gejala-124">Blackheads</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Scurring" id="gejala-125" value="Scurring">
+                        <label for="gejala-125">Scurring</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Skin peeling" id="gejala-126" value="Skin peeling">
+                        <label for="gejala-126">Skin peeling</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Silver like dusting" id="gejala-127" value="Silver like dusting">
+                        <label for="gejala-127">Silver like dusting</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Small dents in nails" id="gejala-128" value="Small dents in nails">
+                        <label for="gejala-128">Small dents in nails</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Inflammatory nails" id="gejala-129" value="Inflammatory nails">
+                        <label for="gejala-129">Inflammatory nails</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Blister" id="gejala-130" value="Blister">
+                        <label for="gejala-130">Blister</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Red sore around nose" id="gejala-131" value="Red sore around nose">
+                        <label for="gejala-131">Red sore around nose</label> 
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="Yellow crust ooze" id="gejala-132" value="Yellow crust ooze">
+                        <label for="gejala-132">Yellow crust ooze</label> 
+                    </div>
+                </div>
+            </div>
+            
+           <div class="cont-btn">
+            <p><input class="button" type="submit" value="Check Result"></p>
+           </div>
+        </form>
+    </div>
+    
+
+    </div>
+    
+    
+</div>
+{% endblock %}

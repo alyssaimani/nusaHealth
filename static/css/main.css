@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #FFEDDB;
+}
+
+h1{
+    color: #20BDD2;
+}
+
+.menu{
+    display: grid;
+}
+
+.cont-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    padding: 18px 64px;
+    margin: 20px 0px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 14px;
+    border: none;
+    background-color: #20BDD2;
+}
+
+.diagnosa form{
+    display: grid;
+    text-align: left;
+    font-weight: bolder;
+}
+
+
+#dropdown-content{
+    display: none;
+    overflow-y: scroll;
+    max-height: 120px;
+    background-color: #ffffff;
+    width: 260px;
+    border-radius: 0 0 8px 8px;
+}
+
+.wrapper::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+}
+.wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+    
+.wrapper::-webkit-scrollbar-thumb {
+    border-right: none;
+    border-left: none;
+}
+
+.wrapper::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 10px; 
+}
+
+.wrapper::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 10px;
+}
+
+.profile{
+    font-weight: bolder;
+    text-align: left;
+}
+
+table{
+    max-width: 260px;
+}
+
+td, th{
+    border: 1px solid;
+    background-color: #ffffff;
+    text-align: left;
+    padding: 8px;
+}
+
+.input-box{
+    padding: 6px 0px;
+    width: 260px;
+    border-radius: 6px;
+}
+
+#search{
+    padding: 6px 0px;
+    width: 260px;
+    border-radius: 6px;
+}
+
+::placeholder{
+    padding-left: 4px;
+}
+
